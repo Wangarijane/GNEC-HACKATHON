@@ -38,15 +38,15 @@ services:
       - key: CLIENT_URL
         value: https://your-frontend-url.vercel.app
 
+  
   - type: web
     name: foodbridge-ai-service
     env: python
-    plan: free
-    branch: main
     rootDir: ai-service
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn -b 0.0.0.0:$PORT app:app
-    autoDeploy: true
+    buildCommand: |
+      pip install --upgrade pip setuptools wheel
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
     envVars:
       - key: FLASK_ENV
         value: production
