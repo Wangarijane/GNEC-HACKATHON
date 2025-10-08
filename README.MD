@@ -151,17 +151,6 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
 
-## 🎥 Demo Video
-
-[Link to your 2-5 minute demo video]
-
-**Demo Script Highlights:**
-1. Show AI prediction dashboard predicting surplus
-2. Demonstrate posting food and AI matching in action
-3. Show recipient browsing and requesting food
-4. Display real-time impact metrics
-5. Highlight SDG 1 & 2 alignment
-
 ## 🌍 SDG Alignment
 
 ### SDG 1: No Poverty
@@ -180,5 +169,3 @@ CLOUDINARY_API_SECRET=your_api_secret
 - **Freemium for Businesses**: $0-50/month
 - **Driver Commission**: 15% per delivery
 - **Enterprise Solutions**: Custom pricing
-
-## 🏅 Hackathon Submission Highlights
