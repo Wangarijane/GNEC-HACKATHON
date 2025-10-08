@@ -1,0 +1,17 @@
+{
+  "name": "foodbridge-ai",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm run client:dev\" \"pnpm run server:dev\" \"pnpm run ai:dev\"",
+    "client:dev": "cd client && pnpm dev",
+    "server:dev": "cd server && pnpm dev",
+    "ai:dev": "cd ai-service && py app.py",
+    "build": "cd client && pnpm build",
+    "start": "cd server && pnpm start",
+    "install:all": "cd client && pnpm install && cd server && pnpm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
