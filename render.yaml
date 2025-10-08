@@ -1,0 +1,63 @@
+services:
+  - type: web
+    name: foodbridge-backend
+    env: node
+    plan: free
+    branch: main
+    rootDir: server
+    buildCommand: pnpm install
+    startCommand: pnpm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: foodbridge-db
+          property: connectionString
+      - key: JWT_SECRET
+        value: your_super_long_random_secret_key_minimum_32_characters
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: CLOUDINARY_CLOUD_NAME
+        value: your_cloud_name
+      - key: CLOUDINARY_API_KEY
+        value: your_api_key
+      - key: CLOUDINARY_API_SECRET
+        value: your_api_secret
+      - key: HUGGING_FACE_API_KEY
+        value: hf_your_token
+      - key: OPENWEATHER_API_KEY
+        value: your_openweather_key
+      - key: MAPBOX_ACCESS_TOKEN
+        value: your_mapbox_token
+      - key: AI_SERVICE_URL
+        value: https://your-ai-service-url.onrender.com
+      - key: CLIENT_URL
+        value: https://your-frontend-url.vercel.app
+
+  - type: web
+    name: foodbridge-ai-service
+    env: python
+    plan: free
+    branch: main
+    rootDir: ai-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -b 0.0.0.0:$PORT app:app
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 5001
+      - key: HUGGING_FACE_API_KEY
+        value: hf_your_token
+      - key: HF_MODEL_ENDPOINT
+        value: https://api-inference.huggingface.co/models
+      - key: OPENWEATHER_API_KEY
+        value: your_openweather_key
+      - key: MONGODB_URI
+        value: mongodb+srv://foodbridge-admin:<password>@foodbridge-cluster.xxxxx.mongodb.net/foodbridge
+

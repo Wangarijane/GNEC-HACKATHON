@@ -48,8 +48,6 @@ coverage/
 uploads/
 */uploads/
 
-# md
-Deployments.md
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
