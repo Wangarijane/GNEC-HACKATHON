@@ -69,3 +69,5 @@ services:
       value: your_openweather_key
     - key: MONGODB_URI
       value: mongodb+srv://foodbridge-admin:<password>@foodbridge-cluster.xxxxx.mongodb.net/foodbridge
+    env:
+      RENDER_PYTHON_USE_POETRY: "false"
