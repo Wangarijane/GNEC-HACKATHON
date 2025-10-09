@@ -18,7 +18,7 @@ build/
 .env.local
 .env.production
 .env.development
-*/.env
+*/\.env
 
 # IDE
 .vscode/
@@ -83,3 +83,27 @@ docker-compose.override.yml
 # Misc
 *.orig
 *.rej
+
+# Python cache and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+*.egg
+
+# VS Code settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
