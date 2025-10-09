@@ -51,7 +51,6 @@ services:
     plan: free
     branch: main
     rootDir: ai-service
-  # No python version specified here - uses runtime.txt instead
     buildCommand: |
       python --version
       pip install --upgrade pip setuptools wheel
