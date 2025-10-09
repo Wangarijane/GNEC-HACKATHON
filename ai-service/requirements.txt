@@ -1,5 +1,6 @@
+python==3.11.8
 pip>=23.0
-setuptools>=65.5.1
+setuptools>=65.0.0
 wheel>=0.38.0
 build>=1.2.1
 
